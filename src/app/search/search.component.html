@@ -1,0 +1,26 @@
+<section id="content">
+        
+        <div class="block-1" style="padding-left:30px;padding-right:30px">
+                        <h1>Car List</h1>
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                        
+                        <thead>
+                                <tr>
+                                        <th>Model</th>
+                                        <th>Registration_No</th>
+                                        <th>Speedometer</th>
+                                        <th>Manufacturer</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let car of data">
+                                        <td>{{ car.model }}</td>
+                                        <td>{{ car.registration_no }}</td>
+                                        <td>{{ car.speedometer }}</td>
+                                        <td>{{ car.manufacturer}}</td>
+                                </tr>
+
+                        </tbody>
+                </table>
+        </div>
+</section>

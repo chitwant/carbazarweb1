@@ -1,0 +1,23 @@
+
+<section id="content">
+    <div class="block-1" >
+    <h1>Car List</h1>
+    <div class="block-1 box-1" style=" overflow-y: auto;height:700px" >   
+      <div *ngFor="let car of Cars" style="border:2px solid gray;border-radius:20px;width:250px;height:340px;margin-bottom:20px;background-color:#c1c1c1;padding:10px;margin:20px;"> 
+         <img src="src/assets/images/uploads/{{ car.photos }}" alt="" width="190" height="120">
+         <p>Model: {{ car.model }}</p>
+         <p>Registration No.	 {{ car.registration_no }}</p>
+         <p *ngIf="car.status == status">Price :  {{ car.cost }}</p>
+         <p *ngIf="car.status == yes">&nbsp; </p>
+        <span style="padding-left:50px;"  *ngIf="car.status == yes">
+           <a href="/cardetail/{{ car._id }}" class="button">Detail</a> 
+          </span>
+        <span *ngIf="car.status == status" >
+           <button class="button">SoldOut!!</button>
+        </span>    
+     
+     
+      </div>      
+     </div>
+     </div>
+    </section>

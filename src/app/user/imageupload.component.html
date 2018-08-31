@@ -1,0 +1,33 @@
+<section id="content">
+  <div class="block-1 box-1" >  
+      <div style="width:100%; background-color:white;margin-bottom:20px;border-radius:20px;">
+          <h1 style="padding:10px; ">Upload Image!!</h1></div>  
+    <div class="test">   
+        <form name="form" #carRegistrationForm="ngForm"  enctype="multipart/form-data">
+            
+            
+    
+            <div class="form-group">
+              <label for="Photopath" >Photo Path</label>
+              <div class="form-group" >
+                <input style="display: none"name="photos" type="file" (change)="onFileChanged($event)" 
+                #fileInput>
+              <button (click)="fileInput.click()">Select File</button>
+             
+              </div>
+            </div>
+             
+            <button (click)="onUpload()">Upload!</button>
+            
+      </form>
+     
+
+
+
+      <ngx-spinner>
+        <p style="font-size: 20px; color: white">Loading...</p>
+       </ngx-spinner>
+</div>
+<div class="test1" ><img src="assets/images/car11.png" width="400" hwoght="400"></div>
+</div>
+</section>

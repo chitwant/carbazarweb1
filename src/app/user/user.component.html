@@ -1,0 +1,73 @@
+<section id="content">
+    
+    <div class="block-1 box-1" >
+   <div style="width:100%; background-color:white;margin-bottom:20px;border-radius:20px;">
+       <h1 style="padding:10px; ">Registration Here!!</h1></div>
+      <div class="test">
+         
+          <form name="form" #carRegistrationForm="ngForm" (ngSubmit)="registerUser()">
+              <div class="form-group" [class.has-error]="firstname.invalid && firstname.touched">
+                  <label for="firstname">First Name</label>
+                  <input type="text" pattern ="[a-zA-Z ]*$"  required class="form-control" name="firstname" [(ngModel)]="registerUserData.firstname"
+                      #firstname="ngModel" />
+                  <span class="help-block " style="color: red;" *ngIf="firstname.invalid && firstname.touched">
+                      Full Name is required
+                  </span>
+                  <span *ngIf="firstname.errors?.pattern" style="color: red;">
+                      User name not valid.
+                  </span>
+              </div>
+              <div class="form-group" [class.has-error]="lastname.invalid && lastname.touched">
+                  <label for="lastname">Last Name</label>
+                  <input type="text"  required class="form-control" name="lastname" [(ngModel)]="registerUserData.lastname" #lastname="ngModel"
+                      required />
+                  <span class="help-block " style="color: red;" *ngIf="lastname.invalid && lastname.touched">
+                      Last Name is required
+                  </span>
+              </div>
+              <div class="form-group" [class.has-error]="email.invalid && email.touched">
+                  <label for="email" class="control-label">Email</label>
+                  <input id="email" required email type="email" class="form-control" name="email" [(ngModel)]="registerUserData.email" #email="ngModel">
+                  <span class="help-block" style="color: red;" *ngIf="email.errors?.required && email.touched">
+                      Email is required
+                  </span>
+                  <span class="help-block" style="color: red;" *ngIf="email.errors?.email && email.touched">
+                      Email is Invalid
+                  </span>
+              </div>
+              <div class="form-group" [class.has-error]="password.touched && password.invalid">
+                  <label for="password" class="control-label">Password</label>
+                  <input id="password" minlength="8" required type="password" class="form-control" name="password" [(ngModel)]="registerUserData.password"
+                      #password="ngModel">
+                  <span class="help-block" style="color: red" *ngIf="password.touched && password.errors?.required">
+                      Password is required
+                  </span>
+                  <div *ngIf="password.hasError('minlength')" class="alert alert-danger">
+                      <span>Password should contain 8 characters</span>
+                  </div>
+              </div>
+  
+              <div class="form-group" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
+                  <label for="confirmPassword" class="control-label">Confirm Password</label>
+                  <input name="confirmPassword" appConfirmEqualValidator="password" required id="confirmPassword" type="password" class="form-control"
+                      [(ngModel)]="registerUserData.confirmPassword" #confirmPassword="ngModel">
+                  <span class="help-block" style="color: red" *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
+                      Confirm Password is required
+                  </span>
+                  <span class="help-block" style="color: red" *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual &&
+                 !confirmPassword.errors?.required">
+                      Password and Confirm Password does not match
+                  </span>
+              </div>
+              <div class="form-group">
+                  <button [disabled]="!carRegistrationForm.valid" class="btn btn-secondary" type="submit">Register</button>
+  
+              </div>
+          </form>
+          <ngx-spinner>
+            <p style="font-size: 20px; color: white">Loading...</p>
+           </ngx-spinner>
+  </div> 
+  <div class="test1" ><img src="assets/images/signup.jpg" /></div>
+    </div>
+    </section>

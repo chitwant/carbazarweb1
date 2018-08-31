@@ -1,0 +1,87 @@
+<section id="content">
+    <div class="block-1 box-1">
+      <div  class="cardetail">   
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a routerLink="/carlisting">Car List</a>
+          </li>
+          <li class="breadcrumb-item" *ngIf="CarId.manufacturer">
+            <a href="">{{CarId.manufacturer}} </a>
+          </li>
+        </ol>
+    
+      
+        <div class="row">
+            <div class="col-md-6">
+        <div class="card" style="position: absolute;">
+          <img src="src/assets/images/uploads/{{ CarId.photos }}" height="300" width="400">
+          <div class="row">
+            <div class="col-md-2" style="padding-left:20px">
+              <img src="src/assets/images/uploads/{{ CarId.photos }}" class="border border-secondary" height="60" width="80">
+            </div>
+            <div class="col-md-2">
+              <img src="src/assets/images/uploads/{{ CarId.photos }}" class="border border-secondary" height="60" width="80">
+            </div>
+            <div class="col-md-2">
+              <img src="src/assets/images/uploads/{{ CarId.photos }}" class="border border-secondary" height="60" width="80">
+            </div>
+            <div class="col-md-2">
+              <img src="src/assets/images/uploads/{{ CarId.photos }}" class="border border-secondary" height="60" width="80">
+            </div>
+            <div class="col-md-2">
+              <img src="src/assets/images/uploads/{{ CarId.photos }}" class="border border-secondary" height="60" width="80">
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="lead">Registration Number</p>
+          </div>
+          <div class="col-md-6">
+              <p class="lead"> {{CarId.registration_no}}</p>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="lead">Model</p>
+          </div>
+          <div class="col-md-6">
+              <p class="lead">{{CarId.model}}</p>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="lead">Speedometer </p>
+          </div>
+          <div class="col-md-6">
+              <p class="lead"> {{CarId.speedometer}} </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              <p class="lead">Car Owner </p>
+            </div>
+            <div class="col-md-6">
+                <p class="lead"> {{CarId.ownername}}</p>
+              </div>
+          </div>
+        <div class="row">
+          <div class="col-md-12" *ngIf="CarId.carownerid != CarId.customerid">
+            <p class="lead" *ngIf="log"><button (click)="sendcardetail()" class="button button3">Ask for Price</button></p>
+          </div>
+          
+        </div>
+        <ngx-spinner>
+          <p style="font-size: 20px; color: white">Loading...</p>
+         </ngx-spinner>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

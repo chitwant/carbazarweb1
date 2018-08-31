@@ -1,0 +1,76 @@
+<section id="content">
+    <div class="block-1 box-1" >  
+        <div style="width:100%; background-color:white;margin-bottom:20px;border-radius:20px;">
+            <h1 style="padding:10px; ">Add Car!!</h1></div>  
+      <div class="test">   
+          <form name="form" #carRegistrationForm="ngForm" (ngSubmit)="saveCar()" enctype="multipart/form-data">
+              <h3 class="card-title">Add Car</h3>
+              <div class="form-group" [class.has-error]="Registration_no.invalid && Registration_no.touched" [class.has-success]="Registration_no.valid">
+                <label for="Registration_no"  class="control-label">Registration Number</label>
+                <input id="Registration_no" minlength="10" maxlength="10" required type="text" class="form-control" name="Registration_no" [(ngModel)]="car.Registration_no"
+                  #Registration_no="ngModel">
+                  <span class="help-block" style="color: red;" *ngIf="Registration_no.invalid && Registration_no.touched">
+                      Registration no is required
+                    </span>
+                    <div *ngIf="Registration_no.hasError('minlength')" class="alert alert-danger">
+                      <span> Registration no should contain 8 characters</span>
+                  </div>
+              </div>
+              <div class="form-group" [class.has-error]="Manufacturer.invalid && Manufacturer.touched" [class.has-success]="Manufacturer.valid">
+                <label for="Manufacturer" class="control-label">Manufacturer</label>
+                <input id="Manufacturer" required type="text" class="form-control" name="Manufacturer" [(ngModel)]="car.Manufacturer" #Manufacturer="ngModel">
+                <span class="help-block" style="color: red;" *ngIf="Manufacturer.invalid && Manufacturer.touched">
+                    Manufacturer is required
+                </span>
+              </div>
+      
+      
+      
+              <div class="form-group" [class.has-error]="Model.invalid">
+                <label for="Model" class="control-label">Model</label>
+                <input id="Model" type="text" required  class="form-control" [(ngModel)]="car.Model" #Model="ngModel" name="Model">
+                <span class="help-block" style="color: red;" *ngIf="Model.errors?.required && Model.touched">
+                    Model is required
+                </span>
+             
+              </div>
+      
+              <div class="form-group" [class.has-error]="Speedometer.invalid">
+                <label for="Speedometer" class="control-label">Speedometer</label>
+                <input id="Speedometer"   required  type="text" class="form-control" [(ngModel)]="car.Speedometer" #Speedometer="ngModel" name="Speedometer">
+                <span class="help-block" style="color: red;" *ngIf="Speedometer.errors?.required  && Speedometer.touched">
+                    Speedometer is required
+                </span>              
+              </div>
+
+              <div class="form-group" [class.has-error]="Cost.invalid">
+                  <label for="Cost" class="control-label">Cost</label>
+                  <input id="Cost"   required  type="text" class="form-control" [(ngModel)]="car.Cost" #Cost="ngModel" name="Cost">
+                  <span class="help-block" style="color: red;" *ngIf="Cost.errors?.required  && Cost.touched">
+                      Cost is required
+                  </span>                
+              </div>
+      
+              <div class="form-group">
+                <label for="Photopath" >Photo Path</label>
+                <div class="form-group" >
+                    <input type="file" accept="image/*" (change)="handleFileInput($event.target.files)" />
+                </div>
+              </div>
+               
+          
+              <button class="btn btn-secondary"  type="submit" [disabled]="!carRegistrationForm.valid " >Save</button>
+      
+         
+        </form>
+       
+
+
+
+        <ngx-spinner>
+          <p style="font-size: 20px; color: white">Loading...</p>
+         </ngx-spinner>
+</div>
+<div class="test1" ><img src="assets/images/car11.png" width="400" hwoght="400"></div>
+</div>
+</section>

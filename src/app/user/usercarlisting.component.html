@@ -1,0 +1,56 @@
+
+<section id="content">
+    <div class="block-1"  > 
+            <h1>{{ name }} Car Listing</h1>
+        <div class="block-1" style=" overflow-y: auto;height:500px;width:950px">
+   <table class="table table-striped" [mfData]="Carlisting" #mf="mfDataTable" [mfRowsOnPage]="5" >
+      <thead>    
+      <tr>
+          <th style="width: 20%">
+              <mfDefaultSorter by="model">#</mfDefaultSorter>
+          </th>
+          <th style="width: 20%">
+              <mfDefaultSorter by="model">Model</mfDefaultSorter>
+          </th>
+          <th style="width: 50%">
+              <mfDefaultSorter by="registration_no">Registration No</mfDefaultSorter>
+          </th>
+          <th style="width: 10%">
+              <mfDefaultSorter by="speedometer">Speedometer</mfDefaultSorter>
+          </th>
+          <th style="width: 20%">
+              <mfDefaultSorter by="cost">Cost</mfDefaultSorter>
+          </th>
+          <th style="width: 20%">
+              <mfDefaultSorter by="image">Image</mfDefaultSorter>
+          </th>
+          <th style="width: 20%">
+              <mfDefaultSorter by="action">Action</mfDefaultSorter>
+          </th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of mf.data ;let i = index">
+          <td> {{ i + 1 }} </td>
+          <td>{{item.model }}</td>
+          <td>{{item.registration_no}}</td>
+          <td class="text-right">{{item.speedometer}}</td>
+          <td>{{item.cost }}</td>
+          <td><a href="#" ><img src="src/assets/images/uploads/{{ item.photos }}" width="100" height="70"></a></td>
+          <td>
+             <!-- <a ><img src="assets/images/edit.png" width="30" height="30"></a>-->
+
+            <a  (click)="deletecarbyuser(item.registration_no)"><img src="assets/images/delete.png" width="30" height="30"></a></td>
+
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+          <td colspan="4">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+      </tr>
+      </tfoot>
+  </table>
+</div> </div> 
+  </section>
