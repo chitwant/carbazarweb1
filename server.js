@@ -4,7 +4,6 @@ const path = require('path');
 var cors = require('cors');
 const app = express();
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/carbazarweb1'));
 app.use(cors());
 app.use(express.static(__dirname + '/dist/car'));
 
