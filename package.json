@@ -1,6 +1,6 @@
 {
   "name": "car",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
@@ -34,7 +34,8 @@
     "ngx-toastr": "^8.10.2",
     "popper.js": "^1.14.4",
     "rxjs": "^6.0.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "express": "*",
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",
