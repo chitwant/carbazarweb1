@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CarService {
- private _apiURL = 'https://carbazarapi.herokuapp.com';
+ private _apiURL = 'https://apicar.herokuapp.com/';
  //private _apiURL = 'http://localhost:3000';
 
   constructor(private carService: CarService, private _http: HttpClient) { }
