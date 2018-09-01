@@ -8,10 +8,15 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'},{ 
-    'Access-Control-Allow-Origin':'*'}) 
+  headers: new HttpHeaders({'Content-Type': 'application/json'}
 };
-
+const header = {
+'Content-Type': 'application/json',
+'Access-Control-Allow-Headers': 'Content-Type',
+'Access-Control-Allow-Methods': 'GET,POST,PUT',
+'Access-Control-Allow-Origin': '*'
+};
+const httpOptions = new HttpHeaders(header);
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +51,7 @@ private extractData(res: Response) {
 
   getCars(): Observable<any> {
  //  debugger;
-  return this._http.get(this._apiURL + '/cars/carlist', httpOptions).pipe(
+  return this._http.get(this._apiURL + '/cars/carlist', headers : httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
 }
@@ -60,7 +65,7 @@ getByCarId(id: string) {
 
 // send email to admin for ask a price of car
 sendEmailforprice() {
-  return this._http.get(this._apiURL + `/users/sendemail`, httpOptions).pipe(
+  return this._http.get(this._apiURL + `/users/sendemail`, headers : httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
 }
@@ -84,7 +89,7 @@ carAccept(body) {
 
 // Check car status is accepted then "Accept" link expire
 acceptLinkExpire(reg_id: string) {
-  return this._http.put(this._apiURL + `/cars/carStatus` + reg_id, httpOptions).pipe(
+  return this._http.put(this._apiURL + `/cars/carStatus` + reg_id, headers : httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
 }
@@ -93,7 +98,7 @@ acceptLinkExpire(reg_id: string) {
 // Send car detail for user by email
 sendcardetail(cardetail) {
   debugger;
-  return this._http.post<any>(this._apiURL + '/users/sendcardetail', cardetail, httpOptions);
+  return this._http.post<any>(this._apiURL + '/users/sendcardetail', cardetail, headers : httpOptions);
 }
 
 
@@ -122,7 +127,7 @@ console.log(formData);
   // };
 
   debugger;
-  return this._http.post(this._apiURL + '/cars/addcar/', formData).pipe(
+  return this._http.post(this._apiURL + '/cars/addcar/', formData,headers : httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
 }
