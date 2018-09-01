@@ -8,12 +8,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'}),
-   headers: new HttpHeaders({ 
+  headers: new HttpHeaders({'Content-Type': 'application/json'},{ 
     'Access-Control-Allow-Origin':'*',
-    'Authorization':'authkey',
-    'userid':'1'
-  })  
+    'Authorization':'authkey'
+  }) 
 };
 
 
