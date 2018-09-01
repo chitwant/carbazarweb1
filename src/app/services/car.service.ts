@@ -10,13 +10,11 @@ import { environment } from '../../environments/environment';
 //const httpOptions = {
  // headers: new HttpHeaders({'Content-Type': 'application/json'}
 //};
-const header = {
-'Content-Type': 'application/json',
-'Access-Control-Allow-Headers': 'Content-Type',
-'Access-Control-Allow-Methods': 'POST',
-'Access-Control-Allow-Origin': '*'
-};
-const httpOptions = new HttpHeaders(header);
+
+ var headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+        const httpOptions =  {
+            headers: headers
+        };
 
 @Injectable({
   providedIn: 'root'
