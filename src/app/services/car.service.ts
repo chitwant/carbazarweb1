@@ -11,7 +11,8 @@ import { environment } from '../../environments/environment';
  // headers: new HttpHeaders({'Content-Type': 'application/json'}
 //};
 
- var headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+ var headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8')
+                                .set('Access-Control-Allow-Origin', '*');
         const httpOptions =  {
             headers: headers
         };
