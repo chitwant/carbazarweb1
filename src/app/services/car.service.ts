@@ -115,19 +115,8 @@ addCar(fileToUpload, car: Car ) {
   formData.append('speedometer', car.Speedometer.toString());
   formData.append('userid', userid);
 
-console.log(formData);
-  // const cardata = {
-  //   registration_no: car.Registration_no,
-  //   manufacturer: car.Manufacturer,
-  //   model: car.Model,
-  //   speedometer: car.Speedometer,
-  //   photos: car.photos,
-  //   userid: car.userid,
-  //   cost: car.Cost
-  // };
-
-  debugger;
-  return this._http.post(this._apiURL + '/cars/addcar/', formData).pipe(
+   debugger;
+  return this._http.post(this._apiURL + '/cars/addcar/', formData,httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
 }
