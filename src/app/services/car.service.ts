@@ -7,9 +7,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'}
-};
+//const httpOptions = {
+ // headers: new HttpHeaders({'Content-Type': 'application/json'}
+//};
 const header = {
 'Content-Type': 'application/json',
 'Access-Control-Allow-Headers': 'Content-Type',
