@@ -13,6 +13,7 @@ app.use(function(req, res, next) {
   
   next();
 });
+
 app.use(express.static(__dirname + '/dist/car'));
 
 app.get('/*', function(req,res) {
