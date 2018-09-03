@@ -116,7 +116,7 @@ addCar(fileToUpload, car: Car ) {
   formData.append('userid', userid);
 
    debugger;
-  return this._http.post(this._apiURL + '/cars/addcar/', formData,httpOptions).pipe(
+  return this._http.post(this._apiURL + '/addcar/addcar/', formData,httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
 }
