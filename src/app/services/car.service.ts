@@ -122,7 +122,7 @@ addCar(car: Car ) {
   return this._http.post(this._apiURL + '/cars/addcar/', formData,httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
-//}
+}
 
 
 
