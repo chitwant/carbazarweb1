@@ -116,7 +116,7 @@ addCar(car: Car ) {
   formData.append('registration_no', car.Registration_no.toString());
   formData.append('speedometer', car.Speedometer.toString());
   formData.append('userid', userid);
-   formData.append('cost', car.photos.toString());
+   formData.append('cost', 'test.jpg');
 
    debugger;
   return this._http.post(this._apiURL + '/cars/addcar/', formData,httpOptions).pipe(
