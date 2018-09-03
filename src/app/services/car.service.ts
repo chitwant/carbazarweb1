@@ -105,22 +105,24 @@ sendcardetail(cardetail) {
 
 
 // add car by user after login
-addCar(fileToUpload, car: Car ) {
+addCar(car: Car ) {
   const userid = localStorage.getItem('_id');
   const formData: FormData = new FormData();
-  if (fileToUpload != null) { formData.append('images', fileToUpload); }
+//  if (fileToUpload != null) {   formData.append('images', fileToUpload); }
+  
   formData.append('cost', car.Cost.toString());
   formData.append('manufacturer', car.Manufacturer.toString());
   formData.append('model', car.Model.toString());
   formData.append('registration_no', car.Registration_no.toString());
   formData.append('speedometer', car.Speedometer.toString());
   formData.append('userid', userid);
+   formData.append('cost', car.photos.toString());
 
    debugger;
   return this._http.post(this._apiURL + '/cars/addcar/', formData,httpOptions).pipe(
     map(this.extractData),
     catchError(this.handleError));
-}
+//}
 
 
 
