@@ -51,7 +51,7 @@ handleFileInput(file: FileList) {
 }
 saveCar() {
   this.spinner.show();
-  this.carService.addCar(this.fileToUpload, this.car)
+  this.carService.addCar(this.car)
   .subscribe((res: any) => {
     console.log(res);
     debugger;
