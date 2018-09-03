@@ -4,7 +4,7 @@ const path = require('path');
 var cors = require('cors');
 const app = express();
 // Serve only the static files form the dist directory
-app.use(cors());
+ app.use(cors({origin: 'https://apicar.herokuapp.com'}));
 
 app.use(function(req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
