@@ -4,14 +4,16 @@ const path = require('path');
 var cors = require('cors');
 const app = express();
 // Serve only the static files form the dist directory
- app.use(cors({origin: 'https://apicar.herokuapp.com'}));
+ //app.use(cors({origin: 'https://apicar.herokuapp.com'}));
+
 
 app.use(function(req, res, next) {
-   res.header("Access-Control-Allow-Origin", "https://apicar.herokuapp.com");
-   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  express.static(__dirname + '/dist/car');
   next();
- });
-app.use(express.static(__dirname + '/dist/car'));
+});
+//app.use(express.static(__dirname + '/dist/car'));
 
 app.get('/*', function(req,res) {
     
