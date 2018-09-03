@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment';
 //};
 
  var headers = new HttpHeaders().set('Content-Type', 'multipart/form-data')
-                                .set('Access-Control-Allow-Origin', '*')
+                                .set('Access-Control-Allow-Origin', 'https://apicar.herokuapp.com/')
                                  .set('Access-Control-Allow-Methods', 'POST');
         const httpOptions =  {
             headers: headers
