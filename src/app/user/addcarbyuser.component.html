@@ -13,7 +13,7 @@
                       Registration no is required
                     </span>
                     <div *ngIf="Registration_no.hasError('minlength')" class="alert alert-danger">
-                      <span> Registration no should contain 8 characters</span>
+                      <span> Registration no should contain 10 characters</span>
                   </div>
               </div>
               <div class="form-group" [class.has-error]="Manufacturer.invalid && Manufacturer.touched" [class.has-success]="Manufacturer.valid">
