@@ -51,7 +51,7 @@ handleFileInput(file: FileList) {
 }
 saveCar() {
   this.spinner.show();
-  this.carService.addCar(this.car)
+  this.carService.addCar(this.fileToUpload, this.car)
   .subscribe((res: any) => {
     console.log(res);
     debugger;
@@ -63,7 +63,7 @@ saveCar() {
       this.router.navigate(['usercarlisting/']);
       return false;
     } else {
-      this.toastr.error(res.message.errmsg);
+      this.toastr.error(res.message);
     }
   }, err => {
     debugger;
