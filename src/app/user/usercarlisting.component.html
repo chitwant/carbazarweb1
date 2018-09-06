@@ -1,7 +1,7 @@
 
 <section id="content">
     <div class="block-1"  > 
-            <h1>{{ name | uppercase}} Car Listing</h1>
+            <h1>{{ name | titlecase}} Car Listing</h1>
         <div class="block-1" style=" overflow-y: auto;height:500px;width:950px">
    <table class="table table-striped" [mfData]="Carlisting" #mf="mfDataTable" [mfRowsOnPage]="5" >
       <thead>    
