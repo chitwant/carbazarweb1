@@ -11,8 +11,8 @@ const httpOptions = {
 export class UserService {
 
 userid = {};
-   private _apiURL = 'https://carbaazarapi.herokuapp.com';
- //private _apiURL = 'https://apicar.herokuapp.com';
+ //  private _apiURL = 'https://carbaazarapi.herokuapp.com';
+ private _apiURL = 'https://apicar.herokuapp.com';
  // private _apiURL = 'http://localhost:3000';
   private _registerurl = this._apiURL + '/users/signUp';
 
