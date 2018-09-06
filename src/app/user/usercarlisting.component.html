@@ -1,7 +1,7 @@
 
 <section id="content">
     <div class="block-1"  > 
-            <h1>{{ name }} Car Listing</h1>
+            <h1>{{ name | uppercase}} Car Listing</h1>
         <div class="block-1" style=" overflow-y: auto;height:500px;width:950px">
    <table class="table table-striped" [mfData]="Carlisting" #mf="mfDataTable" [mfRowsOnPage]="5" >
       <thead>    
@@ -36,7 +36,7 @@
           <td>{{item.registration_no}}</td>
           <td class="text-right">{{item.speedometer}}</td>
           <td>{{item.cost }}</td>
-          <td><a href="#" ><img src="src/assets/images/uploads/{{ item.photos }}" width="100" height="70"></a></td>
+          <td><a href="#" ><img src="http:/webcar1.herokuapp.com/assets/images/uploads/{{ item.photos }}" width="100" height="70"></a></td>
           <td>
              <!-- <a ><img src="assets/images/edit.png" width="30" height="30"></a>-->
 
