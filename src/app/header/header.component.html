@@ -1,7 +1,7 @@
 <header>
     <div class="main wrap">
       <h1><a href="index.html"><img src="assets/images/logo1.png" alt=""></a></h1>
-      <p *ngIf="log">Welcome {{ name }}   <a (click)="authSignOut()"><img src="assets/images/logout.png" width="100" height="50"></a>  | <a routerLink="/carsearch"><img src="assets/images/s1.png" width="80" height="50" title="Car Search"></a>   
+      <p *ngIf="log">Welcome {{ name | titlecase }}   <a (click)="authSignOut()"><img src="assets/images/logout.png" width="100" height="50"></a>  | <a routerLink="/carsearch"><img src="assets/images/s1.png" width="80" height="50" title="Car Search"></a>   
       </p>
       <p *ngIf="!log" style="width:340px;padding:0px"><a routerLink="/user"><img src="assets/images/register.png" width="100" height="50"></a>  | <a routerLink="/login"><img src="assets/images/login.svg" width="100" height="62"></a> | <a routerLink="/carsearch"><img src="assets/images/s1.png" width="80" height="50" title="Car Search"></a> 
       </p> 
