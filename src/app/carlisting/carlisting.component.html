@@ -4,7 +4,7 @@
     <h1>Car List</h1>
     <div class="block-1 box-1" style=" overflow-y: auto;height:700px" >   
       <div *ngFor="let car of Cars" style="border:2px solid gray;border-radius:20px;width:250px;height:340px;margin-bottom:20px;background-color:#c1c1c1;padding:10px;margin:20px;"> 
-         <img src="/assets/images/{{ car.photos }}" alt="" width="190" height="120">
+         <img src="{{ car.photos }}" alt="" width="190" height="120">
          <p>Model: {{ car.model }}</p>
          <p>Registration No.	 {{ car.registration_no }}</p>
          <p *ngIf="car.status == status">Price :  {{ car.cost }}</p>
